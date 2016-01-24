@@ -1,0 +1,8 @@
+excerpt_separator: ""
+pygments: true
+markdown: kramdown
+url: http://tomsuan.github.io
+title: tomsuan
+tagline: A log of everyday life
+description: My awesome new site
+paginate: 5
