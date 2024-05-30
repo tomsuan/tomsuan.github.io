@@ -28,3 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching blog posts:', error));
 });
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('https://api.twitter.com/2/tweets?ids=your_tweet_ids') // Replace with your Twitter API endpoint
+        .then(response => response.json())
+        .then(data => {
+            const twitterFeed = document.getElementById('twitter-feed');
+            data.data.forEach(tweet => {
+                const tweetElement = document.createElement('div');
+                tweetElement.innerHTML = `
+                    <p>${tweet.text}</p>
+                    <a href="https://twitter.com/your_username/status/${tweet.id}">View on Twitter</a>
+                `;
+                twitterFeed.appendChild(tweetElement);
+            });
